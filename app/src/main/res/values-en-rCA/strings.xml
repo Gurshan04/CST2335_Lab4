@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gurshan Canada</string>
+    <string name="show_flag">Show Flag 🇨🇦</string>
+    <!-- You can add more strings if you want Canadian-specific versions -->
+</resources>
