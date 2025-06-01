@@ -7,24 +7,27 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Gurshan"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Gurshan"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.tv"
+            android:value="true" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Gurshan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <!-- For phones/tablets: -->
                 <category android:name="android.intent.category.LAUNCHER" />
+                <!-- For TV: -->
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
-
 </manifest>
