@@ -17,11 +17,10 @@
         android:text="@string/button1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@id/button2"
         android:nextFocusRight="@id/button2"
         android:nextFocusLeft="@id/button3"
-        android:nextFocusDown="@id/spin_switch"
-        />
+        android:nextFocusDown="@id/switchFlag" />
 
     <Button
         android:id="@+id/button2"
@@ -30,11 +29,10 @@
         android:text="@string/button2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/button1"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintEnd_toStartOf="@id/button3"
         android:nextFocusRight="@id/button3"
         android:nextFocusLeft="@id/button1"
-        android:nextFocusDown="@id/spin_switch"
-        />
+        android:nextFocusDown="@id/switchFlag" />
 
     <Button
         android:id="@+id/button3"
@@ -46,29 +44,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:nextFocusRight="@id/button1"
         android:nextFocusLeft="@id/button2"
-        android:nextFocusDown="@id/spin_switch"
-        />
+        android:nextFocusDown="@id/switchFlag" />
 
     <ImageView
-        android:id="@+id/flagview"
+        android:id="@+id/flagImage"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        app:srcCompat="@drawable/banner"
+        app:srcCompat="@drawable/flag"
         app:layout_constraintTop_toBottomOf="@+id/button1"
         app:layout_constraintStart_toStartOf="@+id/button1"
-        app:layout_constraintTop_margin="32dp"
+        android:layout_marginTop="32dp"
         android:contentDescription="@string/flag_desc" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/aclonica"
+        android:text="Canada"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flagImage" />
+
     <Switch
-        android:id="@+id/spin_switch"
+        android:id="@+id/switchFlag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/spin_message"
+        android:text="@string/show_flag"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/flagview"
-        app:layout_constraintBottom_toBottomOf="@id/flagview"
+        app:layout_constraintTop_toTopOf="@id/flagImage"
+        app:layout_constraintBottom_toBottomOf="@id/flagImage"
         app:layout_constraintVertical_bias="0.0"
-        android:nextFocusUp="@id/button1"
-        />
+        android:nextFocusUp="@id/button1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

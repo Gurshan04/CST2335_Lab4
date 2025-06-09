@@ -1,15 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="algonquin.cst2335.gurshan">
 
-    <!-- Optional: Enable TV support (recommended for Android TV compatibility) -->
+    <!-- Optional: Enable TV support -->
     <uses-feature android:name="android.software.leanback" android:required="false" />
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+
+    <!-- Permissions for camera and phone call -->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <!-- No permission needed for ACTION_DIAL, but good for completeness -->
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:supportsRtl="true"
         android:theme="@style/Theme.Gurshan"
         tools:targetApi="31">
 
-        <!-- Tell the system this app works for TV -->
+        <!-- TV meta-data -->
         <meta-data
             android:name="com.google.android.tv"
             android:value="true" />
@@ -20,12 +28,13 @@
             android:theme="@style/Theme.Gurshan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <!-- For phones/tablets: -->
                 <category android:name="android.intent.category.LAUNCHER" />
-                <!-- For TV: -->
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <!-- Register your SecondActivity here -->
+        <activity android:name=".SecondActivity" />
     </application>
+
 </manifest>
