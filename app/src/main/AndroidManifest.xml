@@ -3,38 +3,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="algonquin.cst2335.gurshan">
 
-    <!-- Optional: Enable TV support -->
-    <uses-feature android:name="android.software.leanback" android:required="false" />
-    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <!-- Optional hardware features (marked not required) -->
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.telephony" android:required="false" />
 
-    <!-- Permissions for camera and phone call -->
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <!-- No permission needed for ACTION_DIAL, but good for completeness -->
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- Permissions for call and camera (used in your activities) -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="ChatRoomApp"
         android:supportsRtl="true"
         android:theme="@style/Theme.Gurshan"
         tools:targetApi="31">
 
-        <!-- TV meta-data -->
-        <meta-data
-            android:name="com.google.android.tv"
-            android:value="true" />
-
+        <!-- ✅ ChatRoom is the launcher activity -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Gurshan">
+            android:name=".ChatRoom"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- Register your SecondActivity here -->
+        <!-- MainActivity and SecondActivity are still registered -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Gurshan" />
+
         <activity android:name=".SecondActivity" />
+
     </application>
 
 </manifest>

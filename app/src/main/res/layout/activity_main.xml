@@ -7,34 +7,32 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- Password Prompt -->
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter your email address:" />
+        android:text="Type your Password:"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"/>
 
+    <!-- Password Input -->
     <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Type email here"
-        android:inputType="textEmailAddress" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Type your password:" />
-
-    <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"/>
 
+    <!-- Login Button -->
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:text="Login"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"/>
 
 </LinearLayout>
